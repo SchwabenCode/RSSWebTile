@@ -1,0 +1,61 @@
+{
+  "manifestVersion": 1,
+  "name": "SCHWABENCODE",
+  "description": "SCHWABENCODE RSS Feed",
+  "version": 2,
+  "versionString": "2",
+  "author": "Benjamin Abt",
+  "organization": "SCHWABENCODE",
+  "contactEmail": "",
+  "tileIcon": {
+    "46": "icons/tileIcon.png"
+  },
+  "icons": {},
+  "refreshIntervalMinutes": 60,
+  "tileTheme": {
+    "base": "39bf6f",
+    "highlight": "41ce7a",
+    "lowlight": "35aa65",
+    "secondary": "939982",
+    "highContrast": "33a361",
+    "muted": "2c8454"
+  },
+  "resources": [
+    {
+      "url": "http://schwabencode.com/feed",
+      "style": "Feed",
+      "content": {
+        "_1_rsschanneltitle": "/rss/channel/title",
+        "_1_title": "title",
+        "_1_description": "description"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "layout": "MSBand_NoScrollingText",
+      "condition": "true",
+      "textBindings": [
+        {
+          "elementId": "1",
+          "value": "{{_1_rsschanneltitle}}"
+        },
+        {
+          "elementId": "2",
+          "value": "{{_1_title}}"
+        },
+        {
+          "elementId": "3",
+          "value": "{{_1_description}}"
+        }
+      ]
+    }
+  ],
+  "notifications": [
+    {
+      "condition": "true",
+      "title": "{{_1_rsschanneltitle}}",
+      "body": "{{_1_title}}"
+    }
+  ]
+}
